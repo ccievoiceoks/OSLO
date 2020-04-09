@@ -26,8 +26,8 @@ export async function run() {
     //write('Here are -->' + varblue);
 
     // change the paragraph color to blue.
-    paragraph.font.color = "Red";
-
+    paragraph.font.color = "blue";
+    
     await context.sync();
   });
 }
@@ -50,6 +50,8 @@ function getText() {
               // Get selected data.
               var dataValue = asyncResult.value; 
               write('Here is what you have selected --> ' + dataValue);
+              var dbselect = DB();
+              write('The Status of DB --> ' + dbselect); 
           }            
       });
 }
@@ -59,3 +61,17 @@ function getText() {
 function write(message){
   document.getElementById('message').innerText += message; 
 }
+
+  var mysql = require('mysql');
+
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "proximus",
+    password: "C!sc0LAB"
+  });
+
+  con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    write('DB Connected');
+  });

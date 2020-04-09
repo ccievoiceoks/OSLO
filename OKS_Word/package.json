@@ -26,11 +26,14 @@
     "validate": "office-addin-manifest validate manifest.xml",
     "watch": "webpack --mode development --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mysql": "github:mysqljs/mysql"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
+    "@types/mysql": "^2.15.9",
     "@types/office-js": "^1.0.37",
     "@types/office-runtime": "^1.0.8",
     "babel-loader": "^8.0.6",
