@@ -4,11 +4,11 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="OKS_Word"/>
-  <Description DefaultValue="A template to get started."/>
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
-  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <DisplayName DefaultValue="OSLO"/>
+  <Description DefaultValue="OSLO Office Add-ins"/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/oslo-logo-png-transparent.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/oslo-logo-png-transparent.png"/>
+  <SupportUrl DefaultValue="https://www.proximus.com"/>
   <AppDomains>
     <AppDomain>contoso.com</AppDomain>
   </AppDomains>
