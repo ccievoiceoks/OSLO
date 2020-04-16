@@ -43,4 +43,18 @@ Router.get('/category/:CATEGORY', (req, res)=>{
      });
  });
 
+Router.get('/complete/:CATEGORY', (req, res)=>{
+    var CAT = '%' + [req.params.CATEGORY] + '%';
+    mysqlConnection.query("SELECT * FROM info where category like ? or description like ?",[CAT,CAT], (err, rows, fields) => {
+        if (!err)
+        {
+            console.log(rows);
+            res.send(rows);
+        }
+        else{
+            console.log(err);
+        }
+    });
+});
+
 module.exports = Router;

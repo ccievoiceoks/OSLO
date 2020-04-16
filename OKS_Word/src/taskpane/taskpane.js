@@ -58,8 +58,8 @@ function getText() {
 
               // 1st Possibility and it continue the writing
               write('Here is what you have selected --> ' + dataValue);
-              document.getElementById('FrameResult').src = "https://localhost:4500/description/category/" + dataValue;
-              
+              document.getElementById('FrameResult').src = "https://localhost:4500/description/complete/" + dataValue;
+
               // 2nd possibility in that case it display once the value 
               //document.getElementById("message").innerHTML = dataValue;
               
