@@ -7,6 +7,20 @@ Router.get('/', (req, res)=>{
     mysqlConnection.query("SELECT * FROM info", (err, rows, fields) => {
         if (!err)
         {
+            console.log(rows);
+            res.send(rows);
+        }
+        else{
+            console.log(err);
+        }
+    });
+});
+
+Router.get('/category/', (req, res)=>{
+    mysqlConnection.query("SELECT * FROM info", (err, rows, fields) => {
+        if (!err)
+        {
+            console.log(rows);
             res.send(rows);
         }
         else{
@@ -20,7 +34,8 @@ Router.get('/category/:CATEGORY', (req, res)=>{
      mysqlConnection.query("SELECT * FROM info where category like ?",[CAT], (err, rows, fields) => {
          if (!err)
          {
-             res.send(rows);
+            console.log(rows);
+            res.send(rows);
          }
          else{
              console.log(err);
