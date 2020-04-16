@@ -4,7 +4,7 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const mysqlConnection = require('./connection');
 const Description = require('./AppRoute/description');
-const port = 3000;
+const port = 4500;
 var app = express();
 
 app.use(bodyparser.json());
@@ -15,9 +15,10 @@ app.use('/description',Description);
 //app.listen(port);
 
 // WITH HTTPS
-https.createServer({
+const httpsOptions = {
     key: fs.readFileSync('./devserver.key'),
     cert: fs.readFileSync('./devserver.cert')
-},app).listen(port,()=>{
+};
+https.createServer(httpsOptions,app).listen(port,()=>{
     console.log('Listening https on Port ' + port);
 });
