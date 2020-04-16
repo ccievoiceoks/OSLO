@@ -1,0 +1,21 @@
+{
+  "name": "oslo-mysql",
+  "version": "1.0.0",
+  "description": "OSLO Database Office-Addins",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "OSLO",
+    "DB",
+    "Mysql"
+  ],
+  "author": "Olivier KSIAZEK",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "require": "^2.4.20"
+  }
+}
