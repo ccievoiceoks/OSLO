@@ -10,7 +10,7 @@ Office.onReady(info => {
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
     document.getElementById("run").onclick = run;
-    //document.getElementById("selection").onselect = selection;
+    document.getElementById("DB").onclick = DB;
     //document.getElementById("insert-paragraph").onclick = insertParagraph;
   }
 });
@@ -19,18 +19,24 @@ export async function run() {
     /**
      * Insert your Word code here
      */
-
-    // insert a paragraph at the end of the document.
+     
+    
+     /**
+     * 
+     */
+     // insert a paragraph at the end of the document.
     const paragraph = context.document.body.insertParagraph("Hello Olivier,This is a new ERA", Word.InsertLocation.end);
+    
     var varblue = getText();
-    //write('Here are -->' + varblue);
-
+    
     // change the paragraph color to blue.
     paragraph.font.color = "blue";
     
     await context.sync();
   });
 }
+
+
 
 // To read the value of the current selection, you need to write a callback function that reads the selection.
 // The following example shows how to:
@@ -49,27 +55,28 @@ function getText() {
           else {
               // Get selected data.
               var dataValue = asyncResult.value; 
-              //var DBVALUE = DB('Cisco');
-              write('Here is what you have selected --> ' + dataValue);
-              var DBVALUE = DB(asyncResult.value);
-              DBwrite('The Status of DB --> ' + DBVALUE); 
-          }            
-      });
-}
 
+              // 1st Possibility and it continue the writing
+              write('Here is what you have selected --> ' + dataValue);
+              DB(dataValue);
+
+              // 2nd possibility in that case it display once the value 
+              //document.getElementById("message").innerHTML = dataValue;
+              
+          }            
+      });               
+}
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
   document.getElementById('message').innerText += message; 
 }
 
-function DBwrite(DBmessage){
-  document.getElementById('DBmessage').innerText += DBmessage; 
-}
-
 function DB(param){
 var CAT = '%'+ param +'%';
-  const mysql = require('mysql');
+const mysql = require('mysql');
+//document.getElementById('DBmessage').innerText += typeof(mysql);
+  
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -77,11 +84,14 @@ const connection = mysql.createConnection({
     database: 'PXS',
     port : 3306
 });
+document.getElementById('DBmessage').innerText += typeof(connection);
+
 connection.connect(function(err) {
   if (err) { 
     console.log('error while  connecting');
     console.log(err.code);
     throw(err);
+  
   }
   else
   {
@@ -111,7 +121,7 @@ connection.connect(function(err) {
   else{
     write('The DB has produced --> '+ result[0].description);
     console.log(result[0].description);
-    //return result[0].description;
+    document.getElementById('DBmessage').innerText += result[0].description;
   }
   connection.end();
   });

@@ -1,3 +1,4 @@
+
 function DB(param){
     var CAT = '%'+ param +'%';
       const mysql = require('mysql');
@@ -41,13 +42,18 @@ function DB(param){
       }
       else{
         //write('The DB has produced --> '+ result[0].description);
-        console.log(result[0].description);
-        //return result[0].description;
+        //console.log(result);
+        console.log('Result Array in function --> ' + Array.isArray(result))
+        console.log('Type of --> ' + typeof(result));
+        console.log(result);
       }
       connection.end();
       });
     });
     }
     
-   var Respons = DB('Fo');
-    console.log(Respons);
+   DB('Fo');
+   //console.log('Result Array outside the function --> ' + Array.isArray(raiponce));
+  console.log(DB('Fo'));
+
+  

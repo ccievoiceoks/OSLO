@@ -4,6 +4,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const fs = require("fs");
 const webpack = require("webpack");
+const mysql = require('mysql');
+
 
 module.exports = async (env, options) => {
   const dev = options.mode === "development";
