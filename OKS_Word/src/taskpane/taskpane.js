@@ -10,7 +10,6 @@ Office.onReady(info => {
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
     document.getElementById("run").onclick = run;
-    document.getElementById("DB").onclick = DB;
     //document.getElementById("insert-paragraph").onclick = insertParagraph;
   }
 });
@@ -25,7 +24,8 @@ export async function run() {
      * 
      */
      // insert a paragraph at the end of the document.
-    const paragraph = context.document.body.insertParagraph("Hello Olivier,This is a new ERA", Word.InsertLocation.end);
+    //var TEXTING = 'This is an Expression Text inserted  -- > ';
+    const paragraph = context.document.body.insertParagraph("Hello Olivier", Word.InsertLocation.end);
     
     var varblue = getText();
     
@@ -59,6 +59,14 @@ function getText() {
               // 1st Possibility and it continue the writing
               write('Here is what you have selected --> ' + dataValue);
               document.getElementById('FrameResult').src = "https://localhost:4500/description/complete/" + dataValue;
+              var urlparsing = 'https://localhost:4500/description/complete/' + dataValue;
+              //const resultat = webRequest(urlparsing);
+              /*$.getJSON(
+                urlparsing,
+                function(data){
+                  alert(data.msg);
+                });
+              myInsertTest(resultat); */
 
               // 2nd possibility in that case it display once the value 
               //document.getElementById("message").innerHTML = dataValue;
@@ -69,62 +77,29 @@ function getText() {
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-  document.getElementById('message').innerText += message; 
+  // Old way wiht increment
+  //document.getElementById('message').innerText += message;
+  document.getElementById('message').innerText = message; 
 }
 
-function DB(param){
-var CAT = '%'+ param +'%';
-const mysql = require('mysql');
-//document.getElementById('DBmessage').innerText += typeof(mysql);
-  
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Pass4Labo',
-    database: 'PXS',
-    port : 3306
-});
-document.getElementById('DBmessage').innerText += typeof(connection);
 
-connection.connect(function(err) {
-  if (err) { 
-    console.log('error while  connecting');
-    console.log(err.code);
-    throw(err);
-  
-  }
-  else
-  {
-    console.log('Connected !!!');
-    /*connection.query("SELECT * FROM info", function (err, result, fields) {
-      if (err) { 
-        console.log('Error executing Query');
-        console.log(err.code);
-        console.log(err.log);
-        throw err;
-      }
-      else{
-        console.log(result[0].description);
-      }
-      connection.end();
-      });*/
-  }
-  //var CAT = '%Forum%';
+function webRequest(urlparsing) {
+  fetch(urlparsing)
+    .then(res => res.json())
+    .then((out)=> {
+      console.log('output:' ,out);
+    }).catch(err => console.error(err));
+}
 
-  connection.query("SELECT * FROM info where category like ?",[CAT], function (err, result, fields) {
-  if (err) { 
-    console.log('Error executing Query');
-    console.log(err.code);
-    console.log(err.log);
-    throw err;
-  }
-  else{
-    write('The DB has produced --> '+ result[0].description);
-    console.log(result[0].description);
-    document.getElementById('DBmessage').innerText += result[0].description;
-  }
-  connection.end();
+function myInsertTest(param) {
+  var TEXT = '\n' + param;
+  Word.run(function(context) {
+    var selectedRange = context.document.getSelection();
+    selectedRange.insertText(TEXT, "End");
+    //selectedRange.insertText("\r\n", "End");
+    //selectedRange.select("End");
+    return context.sync();
   });
-});
 }
+
 

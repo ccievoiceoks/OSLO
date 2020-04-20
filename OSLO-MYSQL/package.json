@@ -18,6 +18,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^4.0.3",
     "fs": "0.0.1-security",
+    "get-json": "^1.0.1",
     "https": "^1.0.0",
     "mysql": "^2.18.1",
     "office-addin": "0.0.1",
