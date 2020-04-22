@@ -9,6 +9,10 @@ var app = express();
 
 app.use(bodyparser.json());
 
+// Templating engine
+app.set('views' , './Views/');
+app.set('view engine', 'pug');
+
 app.use('/description',Description);
 
 //Without HTTPS
