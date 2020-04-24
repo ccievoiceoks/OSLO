@@ -1,0 +1,9 @@
+extend layout
+
+block content
+    h3 Results from OSLO Database
+    ul
+        //#{rows}
+        each result, i in results
+            li= result.description
+            hr

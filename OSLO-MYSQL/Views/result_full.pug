@@ -1,0 +1,20 @@
+extend layout
+
+block content
+    h2 Results from OSLO Database
+    ul
+        each result, i in results             
+            b
+                li 
+                    echo Element ID Info :  
+                        echo  #{result.idinfo} 
+            ul
+                li
+                    u 
+                        echo Category :
+                    echo  #{result.category}
+                li
+                    u 
+                        echo Description :
+                    echo  #{result.description}
+            hr

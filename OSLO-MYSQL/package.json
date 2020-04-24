@@ -22,6 +22,7 @@
     "https": "^1.0.0",
     "mysql": "^2.18.1",
     "office-addin": "0.0.1",
+    "pug-cli": "^1.0.0-alpha6",
     "require": "^2.4.20"
   }
 }

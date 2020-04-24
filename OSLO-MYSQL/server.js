@@ -5,12 +5,13 @@ const bodyparser = require('body-parser');
 const mysqlConnection = require('./connection');
 const Description = require('./AppRoute/description');
 const port = 4500;
+const path = require('path');
 var app = express();
 
 app.use(bodyparser.json());
 
 // Templating engine
-app.set('views' , './Views/');
+app.set('views' ,path.join(__dirname,'Views'));
 app.set('view engine', 'pug');
 
 app.use('/description',Description);
