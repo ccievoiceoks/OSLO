@@ -33,22 +33,26 @@
         <h2 class="ms-font-xl">Please sideload your add-in to see app body.</h2>
     </section>
     <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <h2 class="ms-font-xl">OSLO Module</h2>
+        <h2 class="ms-font-xl">VO OSLO Add-ins Search Feature</h2>
         <!-- <ul class="ms-List ms-welcome__features">
             <li class="ms-ListItem">
                 <i class="ms-Icon ms-Icon--Ribbon ms-font-xl"></i> -->
-                <span class="ms-font-m">Discover the Oslo Office Add-ins Integration</span>
+                <span class="ms-font-m">You have selected the following definition</span>
             <!-- </li>
         </ul> -->
-        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Run</span>
+        <div role="textbox" id="SelParam" name="SelParam" class="boxed">
+
         </div>
-        <span class="ms-font-xl" font color="red">Selection</span>
+        <div role="button" id="run" class="ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Search in DB</span>
+        </div>
+        <br>
+        <!-- <span class="ms-font-xl" font color="red">Selection</span>
         <div id="message" font color="red">
-           <!-- <span class="ms-font-m">Message is :</span> -->
-        </div>
-        <span class="ms-font-xl" font color="red">Selection from DB</span>
-        <iframe name="FrameResult" id="FrameResult" src="https://localhost:4500/description/" height=200 width=300></iframe>
+           <!-- <span class="ms-font-m">Message is :</span> 
+        </div> -->
+        <span class="ms-font-xl" font-color="red">Result from DB</span>
+        <iframe name="FrameResult" id="FrameResult" src="https://localhost:4500/description/" height=400 width=300></iframe>
         </div>
         <div id="DBMessage">
             

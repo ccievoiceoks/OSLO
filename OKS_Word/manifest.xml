@@ -28,7 +28,7 @@
             <Description resid="GetStarted.Description"/>
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
           </GetStarted>
-          <FunctionFile resid="Commands.Url"/>
+          <FunctionFile resid="Commands.Url"/>    
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <OfficeTab id="TabHome">
               <Group id="CommandsGroup">
@@ -56,6 +56,40 @@
                 </Control>
               </Group>
             </OfficeTab>
+          </ExtensionPoint>
+          <ExtensionPoint xsi:type="ContextMenu">
+            <OfficeMenu id="ContextMenuText">
+              <Control xsi:type="Menu" id="OKS.ContextMenu2">
+                <Label resid="OSLO.MenuDescription"/>
+                <Supertip>
+                  <Title resid="TaskpaneButton.Label"/>
+                  <Description resid="OSLO.IdItem1.Description"/>
+                </Supertip>
+                <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="Item1">
+                      <Label resid="OSLO.IdItem1"/>
+                      <Supertip>
+                        <Title resid="OSLO.IdItem1"/>
+                        <Description resid="OSLO.IdItem1.Description"/>
+                      </Supertip>
+                      <Icon>
+                      <bt:Image size="16" resid="Icon.16x16"/>
+                      <bt:Image size="32" resid="Icon.32x32"/>
+                      <bt:Image size="80" resid="Icon.80x80"/>
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <TaskpaneId>ButtonId1</TaskpaneId>
+                      <SourceLocation resid="Taskpane.Url"/>
+                    </Action>
+                  </Item>
+                </Items>
+              </Control>
+            </OfficeMenu>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -111,12 +145,15 @@
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="OSLO Group"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="VO OSLO Task Pane"/>
+        <bt:String id="OSLO.MenuDescription" DefaultValue="OSLO Integration"/>
+        <bt:String id="OSLO.IdItem1" DefaultValue="Search Definition in OSLO"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show OSLO Taskpane"/>
+        <bt:String id="OSLO.IdItem1.Description" DefaultValue="Search Definition in OSLO Database Taskpane"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
