@@ -147,13 +147,13 @@
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="OSLO Group"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="VO OSLO Task Pane"/>
-        <bt:String id="OSLO.MenuDescription" DefaultValue="OSLO Integration"/>
-        <bt:String id="OSLO.IdItem1" DefaultValue="Search Definition in OSLO"/>
+        <bt:String id="OSLO.MenuDescription" DefaultValue="OSLO Integratie"/>
+        <bt:String id="OSLO.IdItem1" DefaultValue="Zoek Definitie in OSLO"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show OSLO Taskpane"/>
-        <bt:String id="OSLO.IdItem1.Description" DefaultValue="Search Definition in OSLO Database Taskpane"/>
+        <bt:String id="OSLO.IdItem1.Description" DefaultValue="Zoek Definitie in OSLO Database Taskpane"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
