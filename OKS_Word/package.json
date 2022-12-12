@@ -27,7 +27,7 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "get-json": "^1.0.1",
     "mysql": "github:mysqljs/mysql"
   },
